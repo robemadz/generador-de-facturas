@@ -14,219 +14,229 @@
     />
   </head>
   <body>
-    <!--Formulario añadir servicio/producto -->
-    <section class="w-full mb-20 pt-20">
-      <div class="w-full max-w-lg mx-auto py-10 px-8 bg-slate-50 shadow-md">
-        <h2
-          class="text-2xl font-medium leading-9 text-slate-800 border-b-2 border-b-slate-800"
+    <main class="flex flex-col justify-center xl:gap-20 px-2 xl:flex-row">
+      <!--Formulario añadir servicio/producto -->
+      <section class="pt-20">
+        <div
+          class="w-full max-w-sm mx-auto py-10 px-8 bg-slate-50 shadow-md xl:max-w-md"
         >
-          1. Añade productos/servicios
-        </h2>
-        <form class="mt-8">
-          <label
-            for="concept"
-            class="block mb-4 font-medium leading-6 text-slate-800"
-            >Concepto</label
+          <h2
+            class="text-2xl font-medium leading-9 text-slate-800 border-b-2 border-b-slate-800"
           >
-          <input
-            type="text"
-            name="concept"
-            id="concept"
-            placeholder="Indica el concepto"
-            class="block w-full py-2 px-2 mb-6 leading-6 rounded-sm border border-slate-500"
-          />
+            1. Añade productos/servicios
+          </h2>
+          <form class="mt-8" id="form">
+            <label
+              for="concept"
+              class="block mb-4 font-medium leading-6 text-slate-800"
+              >Concepto</label
+            >
+            <input
+              type="text"
+              name="concept"
+              id="concept"
+              placeholder="Indica el concepto"
+              class="block w-full py-2 px-2 mb-6 leading-6 rounded-sm border border-slate-500"
+            />
 
-          <label
-            for="price"
-            class="block mb-4 font-medium leading-6 text-slate-800"
-            >Precio</label
-          >
-          <input
-            type="number"
-            name="price"
-            id="price"
-            placeholder="Indica el precio"
-            class="block w-full py-2 px-2 mb-6 leading-6 rounded-sm border border-slate-500"
-          />
+            <label
+              for="price"
+              class="block mb-4 font-medium leading-6 text-slate-800"
+              >Precio</label
+            >
+            <input
+              type="number"
+              name="price"
+              id="price"
+              placeholder="Indica el precio"
+              class="block w-full py-2 px-2 mb-6 leading-6 rounded-sm border border-slate-500"
+            />
 
-          <label
-            for="description"
-            class="block mb-4 font-medium leading-6 text-slate-800"
-            >Descripción</label
-          >
-          <textarea
-            name="description"
-            id="description"
-            placeholder="Describe brevemente el producto/servicio"
-            class="block w-full py-2 px-2 mb-6 leading-6 rounded-sm border border-slate-500"
-          ></textarea>
+            <label
+              for="description"
+              class="block mb-4 font-medium leading-6 text-slate-800"
+              >Descripción</label
+            >
+            <textarea
+              name="description"
+              id="description"
+              placeholder="Describe brevemente el producto/servicio"
+              class="block w-full py-2 px-2 mb-6 leading-6 rounded-sm border border-slate-500"
+            ></textarea>
+          </form>
           <!-- Botón añadir datos a plantilla -->
           <div class="mt-10 text-center">
             <button
+              onclick="addService()"
               class="inline-block py-4 px-6 font-semibold text-lg leading-6 bg-slate-900 text-white rounded shadow-none hover:shadow hover:shadow-slate-400 hover:bg-slate-800 hover:-translate-y-[2px] transition"
               id="addDataBtn"
             >
               Añadir datos
             </button>
           </div>
-        </form>
-      </div>
-    </section>
+        </div>
+      </section>
 
-    <section class="mx-auto w-full">
-      <!-- Plantilla factura -->
-      <article
-        class="mt-20 mx-auto py-8 px-4 w-full max-w-[595px] rounded bg-slate-50"
-      >
-        <!-- Título plantilla y logo -->
-        <section class="flex justify-between items-center">
-          <div class="w-full h-[2px] bg-slate-900"></div>
-          <img
-            class="max-w-full mx-8"
-            src="/assets/images/credit-card.svg"
-            alt=""
-          />
-          <div class="w-full h-[2px] bg-slate-900"></div>
-        </section>
-        <h1
-          class="block text-center font-light text-2xl leading-8 text-slate-900"
+      <section>
+        <!-- Plantilla factura -->
+        <article
+          class="mt-20 mx-auto py-8 px-4 w-full max-w-[595px] rounded bg-slate-50"
         >
-          FACTURA
-        </h1>
-        <!-- Cabecera con datos editables -->
-        <section class="flex justify-items-stretch justify-between my-12">
-          <div>
-            <div class="mb-8">
-              <h2 class="mb-1 font-semibold leading-6 text-slate-900">DE /</h2>
-              <div>
-                <p contenteditable class="text-sm text-slate-900">
-                  Alejandra Vallejo Arias
-                </p>
-                <p contenteditable class="text-sm text-slate-900">00000000-F</p>
-                <p contenteditable class="text-sm text-slate-400">
-                  alejiskan@yahoo.es
-                </p>
-              </div>
-            </div>
-            <div>
-              <h2 class="mb-1 font-semibold leading-6 text-slate-900">
-                PARA /
-              </h2>
-              <div>
-                <p contenteditable class="text-sm text-slate-900">
-                  Nombre del cliente
-                </p>
-                <p contenteditable class="text-sm text-slate-900">00000000-F</p>
-                <p contenteditable class="text-sm text-slate-400">
-                  correo@correo.com
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-col">
-            <div class="flex flex-col items-end gap-2 mb-8">
-              <div class="pr-4">
-                <h2 class="inline mr-1 leading-6 text-slate-600">Nº FACTURA</h2>
-                <img
-                  class="inline-block"
-                  src="/assets/images/lineDecoration.png"
-                  alt=""
-                />
-              </div>
-              <div
-                class="inline-block px-4 pt-1 pb-[2px] rounded-full border-2 border-slate-500"
-              >
-                <h2 class="inline mr-2 font-medium leading-6">Nº</h2>
-                <p contenteditable class="inline leading-6">12/2023</p>
-              </div>
-            </div>
-            <div class="flex flex-col items-end gap-2">
-              <div class="pr-4">
-                <h2 class="inline mr-1 leading-6 text-slate-600">FECHA</h2>
-                <img
-                  class="inline-block"
-                  src="/assets/images/lineDecorationLarge.png"
-                  alt=""
-                />
-              </div>
-              <div
-                class="inline-block px-4 pt-1 pb-[2px] rounded-full border-2 border-slate-500"
-              >
-                <h2 contenteditable class="leading-6">01.01.23</h2>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Sección con servicio/producto, descripción y precio -->
-        <section>
-          <!-- Título lista -->
-          <div
-            class="flex justify-between pb-3 mb-8 border-b-2 border-b-slate-800"
+          <!-- Título plantilla y logo -->
+          <section class="flex justify-between items-center">
+            <div class="w-full h-[2px] bg-slate-900"></div>
+            <img
+              class="max-w-full mx-8"
+              src="/assets/images/credit-card.svg"
+              alt=""
+            />
+            <div class="w-full h-[2px] bg-slate-900"></div>
+          </section>
+          <h1
+            class="block text-center font-light text-2xl leading-8 text-slate-900"
           >
-            <h3 class="text-lg leading-6 text-slate-600">SERVICIOS /</h3>
-            <h3 class="text-lg leading-6 text-slate-600">PRECIO /</h3>
-          </div>
-          <!-- Lista servicios/productos -->
-          <ul id="servicesList">
-            <!-- Creamos una plantilla para generar cada servicio -->
-            <template id="invoiceItemTemplate">
-              <li class="flex justify-between gap-24 my-6">
+            FACTURA
+          </h1>
+          <!-- Cabecera con datos editables -->
+          <section class="flex justify-items-stretch justify-between my-12">
+            <div>
+              <div class="mb-8">
+                <h2 class="mb-1 font-semibold leading-6 text-slate-900">
+                  DE /
+                </h2>
                 <div>
-                  <div class="flex items-center justify-start gap-3">
-                    <h3 class="leading-6 text-slate-700" id="service"></h3>
-                    <div class="w-full h-[1px] bg-slate-900"></div>
-                  </div>
-                  <p class="text-sm text-slate-800" id="description"></p>
+                  <p contenteditable class="text-sm text-slate-900">
+                    Alejandra Vallejo Arias
+                  </p>
+                  <p contenteditable class="text-sm text-slate-900">
+                    00000000-F
+                  </p>
+                  <p contenteditable class="text-sm text-slate-400">
+                    alejiskan@yahoo.es
+                  </p>
                 </div>
-                <span class="leading-6 text-slate-700" id="price"></span>
-              </li>
-            </template>
-            <!-- Ejemplo -->
-            <li class="flex justify-between gap-24 my-6">
-              <div>
-                <div class="flex items-center justify-start gap-3">
-                  <h3 class="leading-6 text-slate-700">DISEÑO</h3>
-                  <div class="w-full h-[1px] bg-slate-900"></div>
-                </div>
-                <p class="text-sm text-slate-800">
-                  Diseño de página web con x páginas. CMS con galería
-                </p>
               </div>
-              <span class="leading-6 text-slate-700">1000€</span>
-            </li>
-          </ul>
-        </section>
-        <!-- Seccion subtotales y total -->
-        <section>
-          <!-- Subtotal -->
-          <div class="flex justify-between pt-2 border-t-2 border-slate-800">
-            <h3 class="font-medium leading-6 text-slate-800">SUBTOTAL</h3>
-            <p class="font-medium leading-6 text-slate-800">2500€</p>
-          </div>
-          <!-- IVA -->
-          <div class="flex items-center gap-2 py-4 pl-5">
-            <h4 class="font-medium leading-6 text-slate-700">IVA(+21%)</h4>
-            <div class="w-full h-[1px] bg-slate-900"></div>
-            <p class="font-medium leading-6 text-slate-700">+525€</p>
-          </div>
-          <!-- Precio total -->
-          <div class="flex items-center gap-4 mb-4">
-            <h3
-              class="inline-block py-1 px-4 font-medium text-2xl leading-8 text-slate-800 rounded-full border-2 border-slate-800"
+              <div>
+                <h2 class="mb-1 font-semibold leading-6 text-slate-900">
+                  PARA /
+                </h2>
+                <div>
+                  <p contenteditable class="text-sm text-slate-900">
+                    Nombre del cliente
+                  </p>
+                  <p contenteditable class="text-sm text-slate-900">
+                    00000000-F
+                  </p>
+                  <p contenteditable class="text-sm text-slate-400">
+                    correo@correo.com
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col">
+              <div class="flex flex-col items-end gap-2 mb-8">
+                <div class="pr-4">
+                  <h2 class="inline mr-1 leading-6 text-slate-600">
+                    Nº FACTURA
+                  </h2>
+                  <img
+                    class="inline-block"
+                    src="/assets/images/lineDecoration.png"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="inline-block px-4 pt-1 pb-[2px] rounded-full border-2 border-slate-500"
+                >
+                  <h2 class="inline mr-2 font-medium leading-6">Nº</h2>
+                  <p contenteditable class="inline leading-6">12/2023</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-2">
+                <div class="pr-4">
+                  <h2 class="inline mr-1 leading-6 text-slate-600">FECHA</h2>
+                  <img
+                    class="inline-block"
+                    src="/assets/images/lineDecorationLarge.png"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="inline-block px-4 pt-1 pb-[2px] rounded-full border-2 border-slate-500"
+                >
+                  <h2 contenteditable class="leading-6">01.01.23</h2>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Sección con servicio/producto, descripción y precio -->
+          <section>
+            <!-- Título lista -->
+            <div
+              class="flex justify-between pb-3 mb-8 border-b-2 border-b-slate-800"
             >
-              TOTAL
-            </h3>
-            <div class="w-full h-[1px] bg-slate-900"></div>
-            <p
-              class="font-medium text-2xl leading-8 text-slate-800 underline underline-offset-2"
-            >
-              2.525,00€
-            </p>
-          </div>
-          <!--Linea final documento -->
-          <div class="w-full h-[2px] bg-slate-900"></div>
-        </section>
-      </article>
-    </section>
+              <h3 class="text-lg leading-6 text-slate-600">SERVICIOS /</h3>
+              <h3 class="text-lg leading-6 text-slate-600">PRECIO /</h3>
+            </div>
+            <!-- Lista servicios/productos -->
+            <ul id="servicesList">
+              <!-- Creamos una plantilla para generar cada servicio -->
+              <template id="invoiceItemTemplate">
+                <li class="flex justify-between gap-24 my-6">
+                  <div class="w-full flex-1">
+                    <div class="flex items-center justify-start gap-3">
+                      <h3 class="leading-6 text-slate-700" id="service"></h3>
+                      <div class="w-full h-[1px] bg-slate-900"></div>
+                    </div>
+                    <p
+                      class="text-sm text-slate-800"
+                      id="serviceDescription"
+                    ></p>
+                  </div>
+                  <span
+                    class="leading-6 text-slate-700"
+                    id="servicePrice"
+                  ></span>
+                </li>
+              </template>
+            </ul>
+          </section>
+          <!-- Seccion subtotales y total -->
+          <section>
+            <!-- Subtotal -->
+            <div class="flex justify-between pt-2 border-t-2 border-slate-800">
+              <h3 class="font-medium leading-6 text-slate-800">SUBTOTAL</h3>
+              <p class="font-medium leading-6 text-slate-800" id="subtotal"></p>
+            </div>
+            <!-- IVA -->
+            <div class="flex items-center gap-2 py-4 pl-5">
+              <h4 class="font-medium leading-6 text-slate-700">IVA(+21%)</h4>
+              <div class="w-full h-[1px] bg-slate-900"></div>
+              <p class="font-medium leading-6 text-slate-700" id="subtotalIVA">
+                0€
+              </p>
+            </div>
+            <!-- Precio total -->
+            <div class="flex items-center gap-4 mb-4">
+              <h3
+                class="inline-block py-1 px-4 font-medium text-2xl leading-8 text-slate-800 rounded-full border-2 border-slate-800"
+              >
+                TOTAL
+              </h3>
+              <div class="w-full h-[1px] bg-slate-900"></div>
+              <p
+                class="font-medium text-2xl leading-8 text-slate-800 underline underline-offset-2"
+                id="totalPrice"
+              >
+                0€
+              </p>
+            </div>
+            <!--Linea final documento -->
+            <div class="w-full h-[2px] bg-slate-900"></div>
+          </section>
+        </article>
+      </section>
+    </main>
+    <script defer src="/js/script.js"></script>
   </body>
 </html>
