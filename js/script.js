@@ -7,7 +7,10 @@ function addService() {
   const price = parseFloat(document.getElementById('price').value);
   const description = document.getElementById('description').value;
 
-  //Validar que los campos no están vacíos PENDIENTEE
+  //Validamos que los campos no están vacíos
+  if (concept === '' || price === '' || description === '') {
+    return;
+  }
 
   //Sumamos el precio al subtotal
   subtotal += price;
@@ -45,7 +48,9 @@ function addService() {
 
   //Mostramos el valor del total de la factura
   const totalField = document.getElementById('totalPrice');
-  totalField.textContent = `${total.toFixed(2)}€`;
+  totalField.textContent = `${total
+    .toFixed(2)
+    .replace(/\d(?=(\d{3})+\.)/g, '$&,')}€`;
 
   //Limpiamos los campos del formulario
   const serviceForm = document.getElementById('form');

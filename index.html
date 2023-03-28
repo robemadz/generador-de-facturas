@@ -14,16 +14,14 @@
     />
   </head>
   <body>
-    <main class="flex flex-col justify-center xl:gap-20 px-2 xl:flex-row">
+    <main class="flex flex-col justify-between items-center xl:flex-row">
       <!--Formulario añadir servicio/producto -->
-      <section class="pt-20">
-        <div
-          class="w-full max-w-sm mx-auto py-10 px-8 bg-slate-50 shadow-md xl:max-w-md"
-        >
+      <section class="mx-8 w-full max-w-md">
+        <div class="py-10 px-8">
           <h2
             class="text-2xl font-medium leading-9 text-slate-800 border-b-2 border-b-slate-800"
           >
-            1. Añade productos/servicios
+            1. Añade servicio
           </h2>
           <form class="mt-8" id="form">
             <label
@@ -65,22 +63,21 @@
             ></textarea>
           </form>
           <!-- Botón añadir datos a plantilla -->
-          <div class="mt-10 text-center">
-            <button
-              onclick="addService()"
-              class="inline-block py-4 px-6 font-semibold text-lg leading-6 bg-slate-900 text-white rounded shadow-none hover:shadow hover:shadow-slate-400 hover:bg-slate-800 hover:-translate-y-[2px] transition"
-              id="addDataBtn"
-            >
-              Añadir datos
-            </button>
-          </div>
+
+          <button
+            onclick="addService()"
+            class="w-full mt-8 py-4 px-6 font-semibold text-lg leading-6 bg-slate-900 text-white rounded shadow-none hover:shadow hover:shadow-slate-400 hover:bg-slate-800 hover:-translate-y-[2px] transition"
+            id="addDataBtn"
+          >
+            Añadir datos
+          </button>
         </div>
       </section>
 
-      <section>
+      <section class="w-full h-screen flex items-center bg-slate-700">
         <!-- Plantilla factura -->
         <article
-          class="mt-20 mx-auto py-8 px-4 w-full max-w-[595px] rounded bg-slate-50"
+          class="mx-auto py-8 px-4 w-full max-w-[595px] rounded bg-slate-50"
         >
           <!-- Título plantilla y logo -->
           <section class="flex justify-between items-center">
@@ -185,16 +182,19 @@
                 <li class="flex justify-between gap-24 my-6">
                   <div class="w-full flex-1">
                     <div class="flex items-center justify-start gap-3">
-                      <h3 class="leading-6 text-slate-700" id="service"></h3>
+                      <h3
+                        class="leading-6 text-slate-800 whitespace-nowrap"
+                        id="service"
+                      ></h3>
                       <div class="w-full h-[1px] bg-slate-900"></div>
                     </div>
                     <p
-                      class="text-sm text-slate-800"
+                      class="text-sm text-slate-600"
                       id="serviceDescription"
                     ></p>
                   </div>
                   <span
-                    class="leading-6 text-slate-700"
+                    class="leading-6 text-slate-800"
                     id="servicePrice"
                   ></span>
                 </li>
