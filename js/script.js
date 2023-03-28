@@ -46,7 +46,10 @@ function addService() {
   const newDescription = newService.querySelector('#serviceDescription');
 
   newConcept.textContent = concept;
-  newPrice.textContent = `${price} €`;
+  newPrice.textContent = `${price
+    .toFixed(2)
+    .replace('.', ',')
+    .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')} €`;
   newDescription.textContent = description;
 
   //Agregamos la plantilla clonada al html
@@ -55,17 +58,24 @@ function addService() {
 
   //Actualizamos el subtotal de la factura
   const subtotalField = document.getElementById('subtotal');
-  subtotalField.textContent = `${subtotal} €`;
+  subtotalField.textContent = `${subtotal
+    .toFixed(2)
+    .replace('.', ',')
+    .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')} €`;
 
   //Mostramos el valor del IVA de la factura
   const subtotalIvaField = document.getElementById('subtotalIVA');
-  subtotalIvaField.textContent = `+ ${subtotalIVA.toFixed(2)} €`;
+  subtotalIvaField.textContent = `+ ${subtotalIVA
+    .toFixed(2)
+    .replace('.', ',')
+    .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')} €`;
 
   //Mostramos el valor del total de la factura
   const totalField = document.getElementById('totalPrice');
   totalField.textContent = `${total
     .toFixed(2)
-    .replace(/\d(?=(\d{3})+\.)/g, '$&,')} €`;
+    .replace('.', ',')
+    .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')} €`;
 
   //Limpiamos los campos del formulario
   const serviceForm = document.getElementById('form');
