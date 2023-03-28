@@ -488,6 +488,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1.5rem;
 }
 
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .mt-8 {
   margin-top: 2rem;
 }
@@ -546,6 +556,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-\[1px\] {
   height: 1px;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.min-h-screen {
+  min-height: 100vh;
 }
 
 .w-full {
@@ -654,11 +672,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(30 41 59 / var(--tw-border-opacity));
 }
 
-.border-slate-900 {
-  --tw-border-opacity: 1;
-  border-color: rgb(15 23 42 / var(--tw-border-opacity));
-}
-
 .border-b-slate-800 {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(30 41 59 / var(--tw-border-opacity));
@@ -674,24 +687,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(51 65 85 / var(--tw-bg-opacity));
 }
 
-.bg-slate-50 {
+.bg-white {
   --tw-bg-opacity: 1;
-  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
-}
-
-.bg-slate-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
-}
-
-.bg-lime-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(236 252 203 / var(--tw-bg-opacity));
-}
-
-.bg-lime-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(190 242 100 / var(--tw-bg-opacity));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .bg-lime-400 {
@@ -699,19 +697,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(163 230 53 / var(--tw-bg-opacity));
 }
 
-.bg-lime-200 {
+.bg-lime-300 {
   --tw-bg-opacity: 1;
-  background-color: rgb(217 249 157 / var(--tw-bg-opacity));
+  background-color: rgb(190 242 100 / var(--tw-bg-opacity));
+}
+
+.bg-lime-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(77 124 15 / var(--tw-bg-opacity));
 }
 
 .bg-lime-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(132 204 22 / var(--tw-bg-opacity));
-}
-
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .py-10 {
@@ -757,11 +755,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-}
-
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
 }
 
 .px-12 {
@@ -909,19 +902,29 @@ body {
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-slate-100:hover {
+.hover\:bg-lime-300:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+  background-color: rgb(190 242 100 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-white:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+.hover\:bg-lime-400\/80:hover {
+  background-color: rgb(163 230 53 / 0.8);
 }
 
-.hover\:bg-lime-200:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(217 249 157 / var(--tw-bg-opacity));
+.hover\:bg-lime-400\/70:hover {
+  background-color: rgb(163 230 53 / 0.7);
+}
+
+.hover\:bg-lime-400\/90:hover {
+  background-color: rgb(163 230 53 / 0.9);
+}
+
+.hover\:bg-lime-300\/80:hover {
+  background-color: rgb(190 242 100 / 0.8);
+}
+
+.hover\:bg-lime-300\/90:hover {
+  background-color: rgb(190 242 100 / 0.9);
 }
 
 .hover\:bg-lime-500:hover {
@@ -929,14 +932,9 @@ body {
   background-color: rgb(132 204 22 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-lime-300:hover {
+.hover\:bg-lime-200:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(190 242 100 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-lime-400:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(163 230 53 / var(--tw-bg-opacity));
+  background-color: rgb(217 249 157 / var(--tw-bg-opacity));
 }
 
 .hover\:shadow:hover {
@@ -955,7 +953,32 @@ body {
   --tw-shadow: var(--tw-shadow-colored);
 }
 
+@media (min-width: 768px) {
+  .md\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:h-full {
+    height: 100%;
+  }
+
+  .lg\:min-h-screen {
+    min-height: 100vh;
+  }
+}
+
 @media (min-width: 1280px) {
+  .xl\:h-full {
+    height: 100%;
+  }
+
+  .xl\:min-h-screen {
+    min-height: 100vh;
+  }
+
   .xl\:flex-row {
     flex-direction: row;
   }

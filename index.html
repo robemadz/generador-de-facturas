@@ -17,7 +17,9 @@
   <body>
     <main class="flex flex-col justify-between items-center xl:flex-row">
       <!--Formulario añadir servicio/producto -->
-      <section class="mx-8 w-full max-w-md">
+      <section
+        class="flex flex-col justify-center mx-8 w-full max-w-md xl:min-h-screen xl:h-full"
+      >
         <div class="py-10 px-8">
           <h2
             class="text-2xl font-medium leading-9 text-slate-800 border-b-2 border-b-slate-800"
@@ -76,12 +78,12 @@
       </section>
 
       <section
-        class="w-full h-screen flex flex-col justify-center items-center bg-slate-700"
+        class="w-full h-full min-h-screen flex flex-col justify-center items-center px-4 bg-slate-700 md:px-0"
       >
         <!-- Plantilla factura -->
 
         <article
-          class="mx-auto py-8 px-4 w-full max-w-[595px] rounded bg-white"
+          class="mx-auto py-8 px-4 w-full max-w-[595px] mt-8 rounded bg-white"
           id="invoicePdf"
         >
           <!-- Título plantilla y logo -->
@@ -171,6 +173,7 @@
               </div>
             </div>
           </section>
+
           <!-- Sección con servicio/producto, descripción y precio -->
           <section>
             <!-- Título lista -->
@@ -242,7 +245,7 @@
         </article>
 
         <button
-          class="mt-10 py-4 px-12 font-semibold text-lg leading-6 bg-lime-400 text-slate-900 rounded shadow-none hover:shadow hover:shadow-slate-100 hover:bg-lime-300 hover:-translate-y-[4px] transition"
+          class="my-6 py-4 px-12 font-semibold text-lg leading-6 bg-lime-400 text-slate-900 rounded shadow-none hover:shadow hover:shadow-slate-100 hover:bg-lime-300 hover:-translate-y-[4px] transition"
           onclick="print()"
         >
           Generar PDF
