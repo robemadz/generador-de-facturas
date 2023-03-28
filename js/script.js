@@ -1,3 +1,18 @@
+//Generar PDF. Libreria html2pdf
+function print() {
+  const invoiceTemplate = document.querySelector('#invoicePdf');
+  const options = {
+    filename: 'factura.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: 'cm', format: 'a4', orientation: 'portrait' },
+    height: invoiceTemplate.clientHeight,
+    width: invoiceTemplate.clientWidth,
+    useCORS: true,
+  };
+  html2pdf().set(options).from(invoiceTemplate).save();
+}
+
 //Contador precio
 let subtotal = 0;
 

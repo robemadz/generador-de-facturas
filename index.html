@@ -12,6 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
   </head>
   <body>
     <main class="flex flex-col justify-between items-center xl:flex-row">
@@ -74,10 +75,14 @@
         </div>
       </section>
 
-      <section class="w-full h-screen flex items-center bg-slate-700">
+      <section
+        class="w-full h-screen flex flex-col justify-center items-center bg-slate-700"
+      >
         <!-- Plantilla factura -->
+
         <article
-          class="mx-auto py-8 px-4 w-full max-w-[595px] rounded bg-slate-50"
+          class="mx-auto py-8 px-4 w-full max-w-[595px] rounded bg-white"
+          id="invoicePdf"
         >
           <!-- Título plantilla y logo -->
           <section class="flex justify-between items-center">
@@ -235,6 +240,13 @@
             <div class="w-full h-[2px] bg-slate-900"></div>
           </section>
         </article>
+
+        <button
+          class="mt-10 py-4 px-12 font-semibold text-lg leading-6 bg-lime-400 text-slate-900 rounded shadow-none hover:shadow hover:shadow-slate-100 hover:bg-lime-300 hover:-translate-y-[4px] transition"
+          onclick="print()"
+        >
+          Generar PDF
+        </button>
       </section>
     </main>
     <script defer src="/js/script.js"></script>
