@@ -33,6 +33,9 @@ function addService() {
   //Calculamos el IVA correspondiente al subtotal
   const subtotalIVA = subtotal * 0.21;
 
+  //Calculamos el IRPF
+  const subtotalIRPF = subtotal * 0.2;
+
   //Calculamos el total
   const total = subtotal * 1.21;
 
@@ -66,6 +69,13 @@ function addService() {
   //Mostramos el valor del IVA de la factura
   const subtotalIvaField = document.getElementById('subtotalIVA');
   subtotalIvaField.textContent = `+ ${subtotalIVA
+    .toFixed(2)
+    .replace('.', ',')
+    .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')} €`;
+
+  //Mostramos el valor del IRPF de la factura
+  const subtotalIrpfField = document.getElementById('subtotalIRPF');
+  subtotalIrpfField.textContent = `Autorretención: ${subtotalIRPF
     .toFixed(2)
     .replace('.', ',')
     .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')} €`;
